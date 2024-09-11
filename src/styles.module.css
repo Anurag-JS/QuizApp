@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.completeBtn{
+  height: 2rem;
+  background-color: goldenrod;
+  position: absolute;
+  left: 75%;
+  top: 8%;
+}
+.completeBtn:hover{
+  background-color: rgb(35, 6, 92);
+  color: white;
+}
