@@ -34,7 +34,7 @@ export default function QuizTaking() {
 
   return (
     <div className={styles.quizContainer}>
-      <h2 className={styles.quizHeading}>Take Quiz</h2>
+      <h2 className={styles.quizHeading}>Quiz Started</h2>
       {quiz && (
         <div className={styles.questionContainer}>
           <p className={styles.questionText}>{quiz[currentQuestionIndex].questionText}</p>

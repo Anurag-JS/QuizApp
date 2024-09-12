@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+body{
+  background-image: url("./bccc.jpeg");
+}
+
 .completeBtn{
   height: 2rem;
   background-color: goldenrod;

@@ -1,47 +1,129 @@
 .formContainer {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    position: absolute;
-    left: 20%;
-    right: 20%;
-    background-color: aqua;
-    border: 3px solid goldenrod;
-  }
-  
-  .inputField {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 2px solid goldenrod;
-    border-radius: 10px;
-    background-color: #000000;
-    color: white;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #12083c;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.questionContainer {
+  background-color: #cbd3da;
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.questionContainer:hover {
+  transform: scale(1.02);
+  background-color: #aab1b7;;
+}
+
+.inputField, .inputOpt {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 16px;
+}
+
+.inputOpt {
+  text-align: center;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.correctAnswerLabel {
+  display: block;
+  margin: 10px 0 5px;
+  color: #000000;
+}
+
+.correctAnswerInput {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.button {
+  padding: 12px 20px;
+  background-color: #290c71;
+  color: white;
+  border: 2px solid goldenrod;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: goldenrod;
+  color: black;
+}
+
+.deleteButton {
+  padding: 4px 12px;
+  background-color: rgb(195, 4, 4);
+  color: white;
+  border: 2px solid darkred;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.deleteButton:hover {
+  background-color: rgb(95, 4, 4);
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 10px;
   }
 
-  .inputOpt{
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 7px;
-    width:25rem;
-    text-align: center;
+  .inputOpt {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
   }
 
   .button {
-    padding: 10px 20px;
-    background-color: #290c71;
-    color: white;
-    border: 2px solid goldenrod;
-    border-radius: 4px;
-    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  .button:hover {
-    background-color: goldenrod;
-    color: black;
-  }
+}
 
-  .options{
-    display: flex;
-    background-color: bisque;
-  }
-  
+.options {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+label {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #333;
+}
