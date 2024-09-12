@@ -5,14 +5,8 @@ import QuizResult from '../QuizResult/QuizResult';
 import styles from "./startQuiz.module.css";
 
 export default function StartQuiz() {
-  const { quiz, startQuiz, timeUp, quizCompleted, handleAnswersSubmit } = useContext(QuizContext);
-  const [quizStarted, setQuizStarted] = useState(false); // State to track quiz start
-
-  const handleStartQuiz = () => {
-    setQuizStarted(true); 
-    const selectedQuiz = quiz; 
-    startQuiz(selectedQuiz, 60000); 
-  };
+  const { timeUp, quizCompleted,} = useContext(QuizContext);
+ // const [quizStarted, setQuizStarted] = useState(false); 
 
   if (quizCompleted) {
     return <QuizResult />;
@@ -20,18 +14,18 @@ export default function StartQuiz() {
 
   if (timeUp) {
     return <div className={styles.resultDiv}>
-             <h2 className={styles.warning}>Time's up! Here is Your Result.</h2>
+             <h2 className={styles.warning}>Time's up!</h2>
              <QuizResult />
-           </div>;
+            </div>    
   }
 
   return (
     <div>
-      {!quizStarted ? ( // Check if quiz has started
-        <button className={styles.startBtn} onClick={handleStartQuiz}>Start New Quiz</button>
-      ) : (
-        <QuizTaking /> // Render QuizTaking component if quiz has started
-      )}
+      {/* {!quizStarted ? ( // Check if quiz has started
+        <button className={styles.startBtn} onClick={handleStartQuiz}>Start Quiz final</button>
+      ) : ( */}
+        <QuizTaking /> 
+      {/* )} */}
     </div>
   );
 }

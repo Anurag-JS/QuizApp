@@ -32,6 +32,13 @@ export const QuizContextProvider = ({ children }) => {
     setShowResults(true);
   };
 
+  const resetQuiz = () => {
+    setQuiz([]);
+    setAnswers([]);
+    window.location.reload();
+    //alert("Quiz Reset, Please Refresh the page to start");
+  };
+
   const startQuiz = (quizData, duration) => {
     setQuiz(quizData);
     setTimeLeft(duration);
@@ -43,7 +50,7 @@ export const QuizContextProvider = ({ children }) => {
     <QuizContext.Provider value={{
       quiz, answers, timeUp, createdQuizzes, timeLeft, showResults,
       handleQuizSubmit, handleAnswersSubmit, handleTimeUp,
-      saveCreatedQuiz, startQuiz
+      saveCreatedQuiz, startQuiz, resetQuiz
     }}>
       {children}
     </QuizContext.Provider>

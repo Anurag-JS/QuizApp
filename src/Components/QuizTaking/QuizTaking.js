@@ -44,6 +44,7 @@ export default function QuizTaking() {
                 <input
                   type="radio"
                   name={`question-${currentQuestionIndex}`}
+                  checked={answers[currentQuestionIndex] === i} // Control radio selection
                   onChange={() => handleAnswerChange(currentQuestionIndex, i)}
                 />
                 <span className={styles.optionText}>{option}</span>

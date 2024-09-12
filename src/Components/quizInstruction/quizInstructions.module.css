@@ -1,0 +1,26 @@
+.instructionsContainer {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #343a40;
+  }
+  
+  .instructionsList {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .instructionsList li {
+    margin-bottom: 10px;
+    color: #495057;
+    font-size: 1.1rem;
+  }
+  
