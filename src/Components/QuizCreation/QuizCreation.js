@@ -13,7 +13,6 @@ export default function QuizCreationForm() {
   };
 
   const addNewQuestion = () => {
-    // Check if all inputs in the current questions are filled
     const allQuestionsFilled = quizQuestions.every(question =>
       question.questionText.trim() !== '' &&
       question.answerOptions.every(option => option.trim() !== '') &&
@@ -30,7 +29,6 @@ export default function QuizCreationForm() {
   };
 
   const handleQuestionDelete = (index) => {
-    // Check if the form being deleted is not empty
     const isFormEmpty = quizQuestions[index].questionText.trim() === '' &&
       quizQuestions[index].answerOptions.every(option => option.trim() === '') &&
       (quizQuestions[index].correctAnswerNumber < 1 || quizQuestions[index].correctAnswerNumber > 4);

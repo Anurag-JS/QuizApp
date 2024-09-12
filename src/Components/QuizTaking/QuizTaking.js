@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { QuizContext } from '../../ContextQuiz';
 import Timer from '../Timer/Timer';
 import QuizResult from '../QuizResult/QuizResult';
-import styles from './quizTaking.module.css'; // Import your CSS module
+import styles from './quizTaking.module.css';
 
 export default function QuizTaking() {
   const { quiz, handleAnswersSubmit, showResults, timeLeft, handleTimeUp } = useContext(QuizContext);
@@ -44,7 +44,7 @@ export default function QuizTaking() {
                 <input
                   type="radio"
                   name={`question-${currentQuestionIndex}`}
-                  checked={answers[currentQuestionIndex] === i} // Control radio selection
+                  checked={answers[currentQuestionIndex] === i}
                   onChange={() => handleAnswerChange(currentQuestionIndex, i)}
                 />
                 <span className={styles.optionText}>{option}</span>

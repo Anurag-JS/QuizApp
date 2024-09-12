@@ -8,15 +8,14 @@ import QuizInstructions from './Components/quizInstruction/QuizInstruction';
 export default function App() {
   const { createdQuizzes, quiz, startQuiz } = useContext(QuizContext);
   const [isCreatingQuiz, setIsCreatingQuiz] = useState(true);
-  const [isQuizCreated, setIsQuizCreated] = useState(false); // State to track if quiz is saved
+  const [isQuizCreated, setIsQuizCreated] = useState(false); 
 
   const handleQuizCreationComplete = () => {
-    // Check if the quiz has been saved (if there are any created quizzes)
     if (createdQuizzes.length > 0) {
-      setIsQuizCreated(true); // Mark the quiz as created and saved
+      setIsQuizCreated(true); 
       setIsCreatingQuiz(false);
     } else {
-      alert("Please create and save a quiz before starting!"); // Show alert if quiz is not created
+      alert("Please create and save a quiz before starting!"); 
     }
   };
 
@@ -35,7 +34,6 @@ export default function App() {
           <button
             className={styles.completeBtn}
             onClick={handleQuizCreationComplete}
-            //disabled={!isQuizCreated} // Disable until quiz is created
           >
             <strong>Start Quiz</strong>
           </button>

@@ -4,7 +4,7 @@
     align-items: center;
     padding: 10px;
     margin: 20px auto;
-    background-color: #f0f8ff; /* Light background to contrast with the quiz */
+    background-color: #f0f8ff; 
     border-radius: 10px;
     width: fit-content;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
   .timerValue {
     font-size: 20px;
     font-weight: bold;
-    color: #a70808; /* Standout color for the countdown */
+    color: #a70808; 
   }
   
   @media (max-width: 768px) {
