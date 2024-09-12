@@ -11,7 +11,7 @@ export default function StartQuiz() {
   const handleStartQuiz = () => {
     setQuizStarted(true); 
     const selectedQuiz = quiz; 
-    startQuiz(selectedQuiz, 60); 
+    startQuiz(selectedQuiz, 60000); 
   };
 
   if (quizCompleted) {

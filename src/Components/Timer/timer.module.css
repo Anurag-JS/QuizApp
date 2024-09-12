@@ -1,0 +1,37 @@
+.timerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #f0f8ff; /* Light background to contrast with the quiz */
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timerLabel {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .timerValue {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4500; /* Standout color for the countdown */
+  }
+  
+  @media (max-width: 768px) {
+    .timerContainer {
+      width: 30%;
+      padding: 15px;
+    }
+  
+    .timerLabel,
+    .timerValue {
+      font-size: 16px;
+    }
+  }
+  
