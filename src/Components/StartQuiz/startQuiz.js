@@ -1,28 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { QuizContext } from '../../ContextQuiz';
-import Timer from '../Timer/Timer';
 import QuizTaking from '../QuizTaking/QuizTaking'; // Import QuizTaking
 import QuizResult from '../QuizResult/QuizResult';
+import styles from "./startQuiz.module.css";
 
 export default function StartQuiz() {
-  const { quiz, timeLeft, startQuiz, timeUp, quizCompleted, handleAnswersSubmit } = useContext(QuizContext);
-  const [userAnswers, setUserAnswers] = useState([]);
+  const { quiz, startQuiz, timeUp, quizCompleted, handleAnswersSubmit } = useContext(QuizContext);
   const [quizStarted, setQuizStarted] = useState(false); // State to track quiz start
 
   const handleStartQuiz = () => {
-    setQuizStarted(true); // Set quiz as started
-    const selectedQuiz = quiz; // Assuming we already have a quiz saved
-    startQuiz(selectedQuiz, 60);  // Start quiz with a 60-second timer
-  };
-
-  const handleAnswerChange = (questionIndex, answer) => {
-    const updatedAnswers = [...userAnswers];
-    updatedAnswers[questionIndex] = answer;
-    setUserAnswers(updatedAnswers);
-  };
-
-  const handleSubmit = () => {
-    handleAnswersSubmit(userAnswers);
+    setQuizStarted(true); 
+    const selectedQuiz = quiz; 
+    startQuiz(selectedQuiz, 60); 
   };
 
   if (quizCompleted) {
@@ -30,13 +19,16 @@ export default function StartQuiz() {
   }
 
   if (timeUp) {
-    return <h2>Time's up! Submit your quiz.</h2>;
+    return <div className={styles.resultDiv}>
+             <h2 className={styles.warning}>Time's up! Here is Your Result.</h2>
+             <QuizResult />
+           </div>;
   }
 
   return (
     <div>
       {!quizStarted ? ( // Check if quiz has started
-        <button onClick={handleStartQuiz}>Start New Quiz</button>
+        <button className={styles.startBtn} onClick={handleStartQuiz}>Start New Quiz</button>
       ) : (
         <QuizTaking /> // Render QuizTaking component if quiz has started
       )}

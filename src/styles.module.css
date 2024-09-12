@@ -7,10 +7,27 @@
   height: 2rem;
   background-color: goldenrod;
   position: absolute;
-  left: 75%;
+  left: 65%;
   top: 8%;
 }
 .completeBtn:hover{
   background-color: rgb(35, 6, 92);
   color: white;
+}
+
+.startBtn{
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: goldenrod;
+  height: 3rem;
+  width: 6rem;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.startBtn:hover{
+  background-color: rgb(45, 10, 115);
+  color: white;
+  border: 3px solid goldenrod;
 }

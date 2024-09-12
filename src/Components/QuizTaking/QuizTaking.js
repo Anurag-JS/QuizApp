@@ -2,11 +2,12 @@ import React, { useContext, useState, useEffect } from 'react';
 import { QuizContext } from '../../ContextQuiz';
 import Timer from '../Timer/Timer';
 import QuizResult from '../QuizResult/QuizResult';
+import styles from './quizTaking.module.css'; // Import your CSS module
 
 export default function QuizTaking() {
-  
   const { quiz, handleAnswersSubmit, showResults, timeLeft, handleTimeUp } = useContext(QuizContext);
   const [answers, setAnswers] = useState(Array(quiz ? quiz.length : 0).fill(null));
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const handleAnswerChange = (index, answer) => {
     const updatedAnswers = [...answers];
@@ -15,16 +16,12 @@ export default function QuizTaking() {
   };
 
   const handleSubmit = async () => {
-    //console.log("before handleAnswersSubmit");
-    await handleAnswersSubmit(answers); 
-    //console.log("After handleAnswersSubmit");
+    await handleAnswersSubmit(answers);
   };
 
-  // useEffect(() => {
-  //   if (showResults) {
-  //     console.log("Results are ready to be shown");
-  //   }
-  // }, [showResults]);
+  const goToNextQuestion = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  };
 
   if (showResults) {
     return <QuizResult />;
@@ -36,24 +33,36 @@ export default function QuizTaking() {
   }
 
   return (
-    <div>
-      <h2>Take Quiz</h2>
-      {quiz && quiz.map((q, index) => (
-        <div key={index}>
-          <p>{q.questionText}</p>
-          {q.answerOptions.map((option, i) => (
-            <label key={i}>
-              <input
-                type="radio"
-                name={`question-${index}`}
-                onChange={() => handleAnswerChange(index, i)}
-              />
-              {option}
-            </label>
-          ))}
+    <div className={styles.quizContainer}>
+      <h2 className={styles.quizHeading}>Take Quiz</h2>
+      {quiz && (
+        <div className={styles.questionContainer}>
+          <p className={styles.questionText}>{quiz[currentQuestionIndex].questionText}</p>
+          <div className={styles.optionsContainer}>
+            {quiz[currentQuestionIndex].answerOptions.map((option, i) => (
+              <label key={i} className={styles.optionLabel}>
+                <input
+                  type="radio"
+                  name={`question-${currentQuestionIndex}`}
+                  onChange={() => handleAnswerChange(currentQuestionIndex, i)}
+                />
+                <span className={styles.optionText}>{option}</span>
+              </label>
+            ))}
+          </div>
+          <div className={styles.buttonContainer}>
+            {currentQuestionIndex < quiz.length - 1 ? (
+              <button className={styles.nextButton} onClick={goToNextQuestion}>
+                Next
+              </button>
+            ) : (
+              <button className={styles.submitButton} onClick={handleSubmit}>
+                Submit Answers
+              </button>
+            )}
+          </div>
         </div>
-      ))}
-      <button onClick={handleSubmit}>Submit Answers</button>
+      )}
       <Timer duration={timeLeft} onTimeUp={handleTimeUp} />
     </div>
   );

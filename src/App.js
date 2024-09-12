@@ -15,7 +15,7 @@ export default function App() {
   const handleStartQuiz = () => {
     if (createdQuizzes.length > 0) {
       const lastCreatedQuiz = createdQuizzes[createdQuizzes.length - 1];
-      startQuiz(lastCreatedQuiz, 60);  // Start the quiz with a 60-second timer
+      startQuiz(lastCreatedQuiz, 60*createdQuizzes.length); 
     }
   };
 
@@ -29,7 +29,7 @@ export default function App() {
       ) : (
         <div>
           {!quiz ? (
-            <button onClick={handleStartQuiz}>Start Quiz</button>
+            <button className={styles.startBtn} onClick={handleStartQuiz}>Start Quiz</button>
           ) : (
             <StartQuiz />
           )}
