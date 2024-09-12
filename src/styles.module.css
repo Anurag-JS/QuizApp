@@ -1,37 +1,56 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  position: relative;
+  min-height: 100vh;
+  
 }
-
 body{
   background-image: url("./bccc.jpeg");
+  background-size: cover;
 }
 
-.completeBtn{
-  height: 2rem;
+.completeBtn {
+  height: 2.5rem;
   background-color: goldenrod;
-  position: absolute;
-  left: 65%;
-  top: 8%;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: 3px solid rgb(4, 4, 114);
+  border-radius: 5px;
+  cursor: pointer;
 }
-.completeBtn:hover{
+
+.completeBtn:hover {
   background-color: rgb(35, 6, 92);
   color: white;
+  border: 2px solid goldenrod;
 }
 
-.startBtn{
+.startBtn {
   border: 3px solid black;
   border-radius: 10px;
   background-color: goldenrod;
   height: 3rem;
   width: 6rem;
-  position: absolute;
-  top: 40%;
-  left: 40%;
+  margin: 20px auto;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.startBtn:hover{
+.startBtn:hover {
   background-color: rgb(45, 10, 115);
   color: white;
   border: 3px solid goldenrod;
+}
+
+@media (max-width: 768px) {
+  .completeBtn, .startBtn {
+    width: 80%;
+    height: auto;
+    font-size: 0.9rem;
+  }
 }

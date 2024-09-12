@@ -56,7 +56,7 @@ export default function QuizCreationForm() {
       correctAnswerNumber: question.correctAnswerNumber - 1,
     }));
     saveCreatedQuiz(formattedQuizQuestions);
-    alert("Quiz saved successfully.");
+    alert("Quiz saved successfully, Now you can start Quiz");
   };
 
   return (

@@ -24,7 +24,7 @@ export default function App() {
       {isCreatingQuiz ? (
         <div>
           <QuizCreationForm />
-          <button className={styles.completeBtn} onClick={handleQuizCreationComplete}><strong>Complete Quiz Creation</strong></button>
+          <button className={styles.completeBtn} onClick={handleQuizCreationComplete}><strong>Start Quiz</strong></button>
         </div>
       ) : (
         <div>
